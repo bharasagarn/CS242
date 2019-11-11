@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		var correct = ['b','h','a','r','a','s','a','g','a','r'];
+		var guess = ['_','_','_','_','_','_','_','_','_','_'];
+		var guessed = 0;
+		while(guessed!=correct.length) {
+			var g = prompt("Guess a letter : ");
+			var f = 0;
+			for(var i in correct) {
+				if(g===correct[i]) {
+					if(guess[i]!="_") {
+						f=2;
+						continue;
+					}
+					f = 1;
+					guess[i] = correct[i];
+					guessed++;
+					break;
+				}
+			}
+			if(f===1) {
+				var st = "";
+				for(var j in guess) {
+					// if(guess[j]==="_") st+="_.";
+					// else st+=guess[j];
+					st += guess[j];
+				}
+				alert("Cogratulations!! You have correctly guessed "+guessed+" characters!!   "+st);
+			}
+			else if(f==0) alert("Sorry, incorrect guess!!");
+			else alert("Sorry, previously guessed letter!");
+		}
+		alert("Congratulation, you won the game!!!");
+	</script>
+</head>
+<body>
+</body>
+</html>

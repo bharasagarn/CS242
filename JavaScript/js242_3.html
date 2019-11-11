@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		var s = prompt("Enter sequence : ");
+
+		function getArray(s) {
+			var st = (s.split(","));
+			for(var i in st) {
+				st[i] = Number(st[i]);
+			}
+			return st;
+		}
+
+		function increasingSort(a) {
+			return a.sort(function(a,b){return (a-b)});
+		}
+		
+		console.log(increasingSort(getArray(s)));
+	</script>
+</head>
+<body>
+</body>
+</html>

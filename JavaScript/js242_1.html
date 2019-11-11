@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		var num = prompt("Enter number : ");
+		// function happy_number(num) 
+		// {
+		//     var m, n ;
+		//     var c = [] ;
+		 
+		//     while(num != 1 && c[num] !== true) 
+		//     {
+		//         c[num] = true ;
+		//         m = 0 ;
+		//         while (num > 0) {
+		//             n = num % 10 ;
+		//             m += n * n ;
+		//             num = (num  - n) / 10 ;
+		//         }
+		//         num = m ;
+		//     }
+		//     return (num == 1) ;
+		// }
+		function getSqrSum(n) {
+			var res = 0;
+			var ni = n;
+			while(ni!=0) {
+				res += Math.pow(ni%10,2);
+				ni = Math.floor(ni/10);
+			}
+			return res
+		}
+		function isHappy(n) {
+			var a = 0;
+			while(num!=1) {
+				// console.log(num);
+				num = getSqrSum(num);
+				if(num == 4) {
+					a=1;
+					break;
+				}
+			}
+			return (a == 1);
+		}
+		if(isHappy(num)) console.log("Not Happy!!!");
+		else console.log("Happy!!");
+		// if(happy_number(num)) console.log("YES");
+		// else console.log("NO");
+	</script>
+</head>
+<body>
+</body>
+</html>
